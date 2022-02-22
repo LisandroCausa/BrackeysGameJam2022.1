@@ -24,7 +24,7 @@ public class InteractBed : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").SetActive(false);
             sleepingCamera.SetActive(true);
         }
-
+        
         if(sleeping)
         {
             sleepTimer += Time.deltaTime/3;
