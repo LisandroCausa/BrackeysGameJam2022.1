@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest.unity
     guid: f2cf9589c44450043b4587007379e114
+  - enabled: 1
+    path: Assets/Scenes/ShrinkHouse.unity
+    guid: e71d48a79fa6127458f6af94c943bede
   m_configObjects: {}

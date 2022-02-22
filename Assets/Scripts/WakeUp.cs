@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class WakeUp : MonoBehaviour
 {
-
-    
     public GameObject bedCamera;
     public GameObject player;
     [Space]
