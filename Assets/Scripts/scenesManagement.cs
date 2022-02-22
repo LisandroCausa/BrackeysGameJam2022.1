@@ -7,13 +7,8 @@ public class scenesManagement : MonoBehaviour
 
     public static int scene = 1;
 
-    void Start()
+    public static void nextScene()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        scene++;
     }
 }

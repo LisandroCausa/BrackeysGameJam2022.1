@@ -30,8 +30,8 @@ public class InteractBed : MonoBehaviour
             blackScreen.color = new Color(0, 0, 0, sleepTimer);
             if(sleepTimer > 1)
             {
-                // Next Scene
-                scenesManagement.scene++;
+                //scenesManagement.scene++;
+                scenesManagement.nextScene();
             }
         }
     }
@@ -39,12 +39,14 @@ public class InteractBed : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        playerIsColliding = true;
+        if(other.CompareTag("Player"))
+            playerIsColliding = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        playerIsColliding = false;
+        if(other.CompareTag("Player"))
+            playerIsColliding = false;
     }
 
 }

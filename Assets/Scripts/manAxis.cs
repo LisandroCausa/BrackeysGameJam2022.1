@@ -33,15 +33,23 @@ public class manAxis : MonoBehaviour
         if(timeRunning)
         {
             timer += Time.deltaTime;
-            z = -62 + 1.65f * timer;
+            z = -52 + 1.38f * timer;
             if(z > -8)
             {
                 z = -8;
-                fader.fade(0f, 1f, blackFade.fadingModes.In);
+                float time = 1f;
+                fader.fade(0f, time, blackFade.fadingModes.In);
+                StartCoroutine(waitForFadeIn(time + 0.25f));
                 timeRunning = false;
             }
             _vignette.intensity.value = (timer/28f)/2;
         }
+    }
+
+    IEnumerator waitForFadeIn(float value)
+    {
+        yield return new WaitForSecondsRealtime(value);
+        scenesManagement.nextScene();
     }
 
     IEnumerator waitForNewPosition()
@@ -54,7 +62,8 @@ public class manAxis : MonoBehaviour
             man.GetComponent<Transform>().localPosition = new Vector3(0, 0, z);
             yield return new WaitForSecondsRealtime(Random.Range(2f, 4.5f));
             man.SetActive(false);
-            yield return new WaitForSecondsRealtime(Random.Range(0.25f, 1f));
+            yield return new WaitForSecondsRealtime(Random.Range(0.25f, 0.75f));
         }
     }
+
 }
