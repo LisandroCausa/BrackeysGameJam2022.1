@@ -21,8 +21,8 @@ public class whispersAxis : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSecondsRealtime(Random.Range(1.5f, 4.5f));
             transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            yield return new WaitForSecondsRealtime(Random.Range(1.5f, 4.5f));
         }
     }
 }
