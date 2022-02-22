@@ -15,6 +15,8 @@ public class manAxis : MonoBehaviour
     public Volume post_processing;
     Vignette _vignette;
 
+    public blackFade fader;
+
     void Start()
     {
         if(post_processing.profile.TryGet<Vignette>(out var vignette))
@@ -32,10 +34,10 @@ public class manAxis : MonoBehaviour
         {
             timer += Time.deltaTime;
             z = -62 + 1.65f * timer;
-            if(z > -10)
+            if(z > -8)
             {
-                z = -10;
-                Debug.Log("LLEGUE");
+                z = -8;
+                fader.fade(0f, 1f, blackFade.fadingModes.In);
                 timeRunning = false;
             }
             _vignette.intensity.value = (timer/28f)/2;

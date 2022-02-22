@@ -5,16 +5,19 @@ using UnityEngine;
 public class whispersAxis : MonoBehaviour
 {
     Transform player;
+    AudioSource audioSource;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource = GetComponentInChildren<AudioSource>();
         StartCoroutine(waitForNewPosition());      
     }
 
     void Update()
     {
         transform.position = player.position;
+        audioSource.volume += Time.deltaTime/10;
     }
 
     IEnumerator waitForNewPosition()
