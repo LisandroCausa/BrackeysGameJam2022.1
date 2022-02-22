@@ -15,10 +15,11 @@ public class InteractBed : MonoBehaviour
     void Update()
     {
         PressFText.SetActive(playerIsColliding);
-        if(playerIsColliding && Input.GetKeyDown(KeyCode.F) && !sleeping)
+        if(playerIsColliding && Input.GetKeyDown(KeyCode.F) && !sleeping && scenesManagement.scene == 1)
         {
             // Do Something...
             sleeping = true;
+            sleepTimer = 0f;
             playerIsColliding = false;
             GameObject.FindGameObjectWithTag("Player").SetActive(false);
             sleepingCamera.SetActive(true);
