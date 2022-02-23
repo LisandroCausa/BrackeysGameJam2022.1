@@ -16,6 +16,8 @@ public class ShrinkHouse : MonoBehaviour
     Transform player;
     Vector3 playerScale = new Vector3(1, 1, 1);
 
+    public blackFade fader;
+
     void Start()
     {
         if(post_processing.profile.TryGet<ChromaticAberration>(out var _chromaticAberration))
@@ -62,7 +64,16 @@ public class ShrinkHouse : MonoBehaviour
             post_processing.enabled = true;
             GetComponent<BoxCollider>().enabled = false;
             GetComponent<AudioSource>().Play();
+            StartCoroutine(finalOfScene());
         }
     }
 
+    IEnumerator finalOfScene()
+    {
+        yield return new WaitForSecondsRealtime(17f);
+        float fadeTime = 5f;
+        fader.fade(0f, fadeTime, blackFade.fadingModes.In);
+        yield return new WaitForSecondsRealtime(fadeTime + 0.25f);
+        scenesManagement.nextScene();
+    }
 }
