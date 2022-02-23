@@ -35,11 +35,8 @@ public class ShrinkHouse : MonoBehaviour
         if(metamorphosis)
         {
             chromaticAberration.intensity.value += Time.deltaTime/7;
-            if(lensDistortion_Value < 0.8f)
-            {
-                lensDistortion_Value += Time.deltaTime/12;
-                lensDistortion.intensity.value = lensDistortion_Value;
-            }
+            lensDistortion_Value += Time.deltaTime/14.5f;
+            lensDistortion.intensity.value = lensDistortion_Value;
             playerScale.x -= Time.deltaTime/16;
             playerScale.y -= Time.deltaTime/16;
             playerScale.z -= Time.deltaTime/16;

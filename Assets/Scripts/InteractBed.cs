@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InteractBed : MonoBehaviour
 {
@@ -12,12 +13,13 @@ public class InteractBed : MonoBehaviour
     bool sleeping = false;
     float sleepTimer = 0f;
 
+    public TextMeshProUGUI subtitleTired;
+
     void Update()
     {
         PressFText.SetActive(playerIsColliding);
         if(playerIsColliding && Input.GetKeyDown(KeyCode.F) && !sleeping && scenesManagement.scene == 1)
         {
-            // Do Something...
             sleeping = true;
             sleepTimer = 0f;
             playerIsColliding = false;
@@ -31,22 +33,33 @@ public class InteractBed : MonoBehaviour
             blackScreen.color = new Color(0, 0, 0, sleepTimer);
             if(sleepTimer > 1)
             {
-                //scenesManagement.scene++;
-                scenesManagement.nextScene();
+                StartCoroutine(waitBlackScreen());
+                sleeping = false;
             }
         }
+    }
+
+    IEnumerator waitBlackScreen()
+    {
+        yield return new WaitForSecondsRealtime(1.5f);
+        scenesManagement.nextScene();
     }
 
     void OnTriggerStay(Collider other)
     {
         if(other.CompareTag("Player"))
+        {
             playerIsColliding = true;
+            subtitleTired.enabled = false;
+        }
     }
 
     void OnTriggerExit(Collider other)
     {
         if(other.CompareTag("Player"))
+        {
             playerIsColliding = false;
+            subtitleTired.enabled = true;
+        }
     }
-
 }

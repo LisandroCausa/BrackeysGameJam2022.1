@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bedCamera: {fileID: 561491464}
   player: {fileID: 589139057}
-  time: 3
+  time: 4
 --- !u!65 &361016668
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -644,7 +644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOut: 1
-  blackTime: 0.75
+  blackTime: 1.4
   duration: 3
 --- !u!1001 &1274455110
 PrefabInstance:
@@ -781,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1402192458821567875, guid: 32a44ed8d121dfb49a68a9b6fc9da7e1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1402192458821736867, guid: 32a44ed8d121dfb49a68a9b6fc9da7e1, type: 3}
       propertyPath: m_RootOrder
