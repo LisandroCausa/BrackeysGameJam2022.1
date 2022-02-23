@@ -49,7 +49,6 @@ public class ShrinkHouse : MonoBehaviour
         }
     }
 
-
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
@@ -62,6 +61,7 @@ public class ShrinkHouse : MonoBehaviour
             metamorphosis = true;
             post_processing.enabled = true;
             GetComponent<BoxCollider>().enabled = false;
+            GetComponent<AudioSource>().Play();
         }
     }
 
