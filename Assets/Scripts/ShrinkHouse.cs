@@ -8,6 +8,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class ShrinkHouse : MonoBehaviour
 {
     bool metamorphosis = false;
+    public GameObject subtitle;
+    public Transform painting;
     public Volume post_processing;
     ChromaticAberration chromaticAberration;
     float lensDistortion_Value = 0f;
@@ -45,6 +47,7 @@ public class ShrinkHouse : MonoBehaviour
                 playerScale = new Vector3(0.1f, 0.1f, 0.1f);
             }
             player.localScale = playerScale;
+            painting.Rotate(0f, Time.deltaTime*(lensDistortion_Value*50), 0f, Space.Self);
         }
     }
 
@@ -61,6 +64,7 @@ public class ShrinkHouse : MonoBehaviour
             post_processing.enabled = true;
             GetComponent<BoxCollider>().enabled = false;
             GetComponent<AudioSource>().Play();
+            subtitle.SetActive(false);
             StartCoroutine(finalOfScene());
         }
     }
