@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ShrinkHouse.unity
     guid: e71d48a79fa6127458f6af94c943bede
   - enabled: 1
+    path: Assets/Scenes/Asylum.unity
+    guid: 30fb6719a9eb1d84a807a42d598b16f8
+  - enabled: 1
     path: Assets/Scenes/Final.unity
     guid: 10c15317f42b2b547b996baaf47ea4fd
   - enabled: 1
