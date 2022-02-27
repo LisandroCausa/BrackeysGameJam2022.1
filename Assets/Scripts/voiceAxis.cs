@@ -24,10 +24,10 @@ public class voiceAxis : MonoBehaviour
     {
         while(true)
         {
-            transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
-            child.position = new Vector3(Random.Range(15f, 40f), 0f, 0f);
-            audioSource.Play();
             yield return new WaitForSecondsRealtime(Random.Range(5f, 10f));
+            transform.rotation = Quaternion.Euler(0, Random.Range(0, 360), 0);
+            audioSource.volume = Random.Range(0.3f, 0.7f);
+            audioSource.Play();
         }
     }
 }
