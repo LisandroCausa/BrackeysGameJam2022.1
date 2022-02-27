@@ -65,5 +65,4 @@ public class manAxis : MonoBehaviour
             yield return new WaitForSecondsRealtime(Random.Range(0.25f, 0.75f));
         }
     }
-
 }
