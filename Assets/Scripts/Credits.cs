@@ -11,6 +11,8 @@ public class Credits : MonoBehaviour
 
     IEnumerator waitToGoToMenu()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         yield return new WaitForSecondsRealtime(3f);
         scenesManagement.scene = -1;
         scenesManagement.nextScene();
