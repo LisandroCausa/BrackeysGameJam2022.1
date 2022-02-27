@@ -6,7 +6,6 @@ using UnityEngine.Rendering.Universal;
 
 public class Asylum : MonoBehaviour
 {
-
     Volume post_processing;
 
     ChromaticAberration chromaticAberration;
@@ -48,10 +47,7 @@ public class Asylum : MonoBehaviour
 
     void Update()
     {
-        //colorAdjustments.saturation.value += Time.deltaTime*10;
         chromaticAberration.intensity.value += Time.deltaTime/8;
-        //vignette_value += Time.deltaTime/15;
-        //vignette.intensity.value = vignette_value;
         if(increase_saturation)
         {
             saturation_value += Time.deltaTime*10;
