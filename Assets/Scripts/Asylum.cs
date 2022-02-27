@@ -91,7 +91,7 @@ public class Asylum : MonoBehaviour
 
     IEnumerator waitToFinishScene()
     {
-        yield return new WaitForSecondsRealtime(35f);
+        yield return new WaitForSecondsRealtime(42f);
         float time = 5f;
         fader.fade(0f, time, blackFade.fadingModes.In);
         yield return new WaitForSecondsRealtime(time + 0.5f);
