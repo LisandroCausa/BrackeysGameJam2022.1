@@ -13,7 +13,7 @@ public class Credits : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(6f);
         scenesManagement.scene = -1;
         scenesManagement.nextScene();
     }
